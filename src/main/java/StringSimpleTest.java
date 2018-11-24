@@ -11,11 +11,21 @@ import java.util.Map;
 @Slf4j
 public class StringSimpleTest {
 
+    /**
+     * String char[] 数组构成
+     */
 
     @Test
     public void testSystem(){
 
         Map<String,String> map = System.getenv();
+
+        String a = "123";
+        a.indexOf("12");
+        a.equals("");
+
+
+
 
 
 
@@ -23,11 +33,6 @@ public class StringSimpleTest {
         log.info("-----");
     }
 
-
-    /**
-     * Arrays
-     *
-     */
 
 
 
