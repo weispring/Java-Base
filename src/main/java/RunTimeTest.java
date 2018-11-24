@@ -53,7 +53,7 @@ public class RunTimeTest {
         Runtime.getRuntime().exit(0);
         Runtime.getRuntime().gc();
 
-        Arrays
+        /*Arrays*/
 
     }
 
