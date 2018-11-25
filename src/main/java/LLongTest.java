@@ -21,5 +21,8 @@ public class LLongTest {
          */
         Long.toString(117L);
         System.out.println("-------");
+        new Long("34567");
+
+        //CharacterDataLatin1
     }
 }
