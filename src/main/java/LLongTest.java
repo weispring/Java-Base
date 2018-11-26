@@ -24,5 +24,14 @@ public class LLongTest {
         new Long("34567");
 
         //CharacterDataLatin1
+
+        Boolean boolFlag = new Boolean("true");
+        //return value ? 1231 : 1237;
+        boolFlag.hashCode();
+
+        Byte b = new Byte((byte) 121);
+        //return (int)value;
+        b.hashCode();
+
     }
 }
