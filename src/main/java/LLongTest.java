@@ -33,5 +33,9 @@ public class LLongTest {
         //return (int)value;
         b.hashCode();
 
+        new Long(10).hashCode();
+
+
+
     }
 }
