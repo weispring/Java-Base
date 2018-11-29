@@ -39,5 +39,28 @@ public class LLongTest {
 
 
 
+
+
+
+    }
+
+    /**
+     * String 固定数组，操作产生新的对象
+     *
+     * 可扩容数据
+     * StringBuffer 线程安全
+     * StringBuilder 线程不安全
+     * 两者相似
+     *
+     */
+    @Test
+    public void testString(){
+        String a = "";
+        String bb = a.replace("","");
+
+
+        //bb.hashCode()
+
+
     }
 }
