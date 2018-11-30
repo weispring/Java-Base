@@ -49,6 +49,34 @@ public class LLongTest {
 
         log.info("--{}",Integer.MIN_VALUE);
 
+        new Integer(10);
+        new Long(10).hashCode();
+
+
+
+
+
+    }
+
+    /**
+     * String 固定数组，操作产生新的对象
+     *
+     * 可扩容数据
+     * StringBuffer 线程安全
+     * StringBuilder 线程不安全
+     * 两者相似
+     *
+     */
+    @Test
+    public void testString(){
+        String a = "";
+        String bb = a.replace("","");
+
+       /* replaceFirst
+        toLowerCase
+        format*/
+
+        //bb.hashCode()
 
 
     }

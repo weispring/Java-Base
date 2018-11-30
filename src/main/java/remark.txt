@@ -1,1 +1,11 @@
+note:
 8中基本数据类型包装类的hashCode都重写了，与其他本身值有关
+
+AbstractStringBuilder
+主要操作char[]数据， 经常用到System.arraycopy
+reverse
+highCode
+
+
+learn:
+java.lang.Integer.toBinaryString
