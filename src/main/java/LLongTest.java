@@ -34,6 +34,21 @@ public class LLongTest {
         b.hashCode();
 
 
+        int x = 1;
+        x <<= 3;
+        log.info("结果：{}",x);
+
+        x = (int)(13441>>> 32);
+        log.info("结果：{}",x);
+
+       int dddd = "10000100000000000000000000000000".length();
+
+       // int bb = 27 - Integer.valueOf("10000100000000000000000000000000",2).intValue() ;
+
+
+
+        log.info("--{}",Integer.MIN_VALUE);
+
         new Integer(10);
         new Long(10).hashCode();
 
@@ -77,6 +92,7 @@ public class LLongTest {
     public void testString(){
 
 
+
     }
 
 
@@ -85,7 +101,9 @@ public class LLongTest {
      */
     @Test
     public void testIntergePro(){
-
+        /* replaceFirst
+        toLowerCase
+        format*/
         String bb = "".replace("","");
         String[] a = {};
         String.format("",a);
