@@ -1,3 +1,5 @@
+package llang;
+
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
@@ -12,7 +14,7 @@ import java.util.Map;
 public class StringSimpleTest {
 
     /**
-     * String char[] 数组构成
+     *
      */
 
     @Test
@@ -23,11 +25,6 @@ public class StringSimpleTest {
         String a = "123";
         a.indexOf("12");
         a.equals("");
-
-
-
-
-
 
 
         log.info("-----");

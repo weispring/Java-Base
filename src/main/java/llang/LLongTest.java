@@ -1,3 +1,5 @@
+package llang;
+
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
@@ -65,6 +67,7 @@ public class LLongTest {
      * 2. 四种包装类型的hashCode 都和value有关
      * 3. 四种包装类型的equals方法都是值比较
      * 4. Number包装类和String互转
+     * 5. Byte和Short较为简单，主要看Integer和Long
      *
      *
      */
@@ -73,6 +76,9 @@ public class LLongTest {
         Long.valueOf(1L);
         Byte.valueOf((byte)2);
         Short.valueOf((short) 1);
+        //Float
+
+
     }
 
 
@@ -82,17 +88,19 @@ public class LLongTest {
     /**
      * String 固定数组，操作产生新的对象
      *
-     * 可扩容数据
-     * StringBuffer 线程安全
+     * 可扩容数据,初始容量为16初始容量为16，扩容后2n+2
+     * StringBuffer 线程安全,toString会缓存char[] 数组
      * StringBuilder 线程不安全
      * 两者相似
-     *
      */
     @Test
     public void testString(){
-
-
-
+    /*public StringBuilder(String str) {
+            super(str.length() + 16);
+            append(str);
+        }*/
+        StringBuffer a = new StringBuffer();
+        StringBuilder b = new StringBuilder();
     }
 
 
