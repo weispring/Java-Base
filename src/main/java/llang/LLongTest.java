@@ -79,6 +79,7 @@ public class LLongTest {
         //Float
 
 
+
     }
 
 
@@ -109,9 +110,7 @@ public class LLongTest {
      */
     @Test
     public void testIntergePro(){
-        /* replaceFirst
-        toLowerCase
-        format*/
+
         String bb = "".replace("","");
         String[] a = {};
         String.format("",a);
