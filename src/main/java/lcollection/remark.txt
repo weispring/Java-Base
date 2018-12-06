@@ -1,0 +1,2 @@
+ArrayList:
+动态数据，默认容量10，扩若因子1.5倍，add、remove、clear 会导致modCount++;
