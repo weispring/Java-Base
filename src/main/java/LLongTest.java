@@ -1,6 +1,9 @@
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @Auther: lixianchun
  * @Date: 2018/11/24 18:12
@@ -79,5 +82,16 @@ public class LLongTest {
         //bb.hashCode()
 
 
+
+    }
+
+    @Test
+    public void testQu(){
+        String format = "i am %s , come from %s ";
+        List<String> messages = new ArrayList<>(5);
+        messages.add("lichun");
+        messages.add("china");
+        String result = String.format(format,messages.toArray());
+        log.info("result :{}",result);
     }
 }
