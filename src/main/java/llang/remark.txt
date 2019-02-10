@@ -34,7 +34,7 @@ Object
 wait 方法
 针对两个线程同时等待还是要加这个while的，再次判断是否可以唤醒当前线程
 
-Thread
+ThreadLocal
 
 p
 哈希冲突
