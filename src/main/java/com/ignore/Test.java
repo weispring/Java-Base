@@ -1,4 +1,4 @@
-package ignore;
+package com.ignore;
 
 import lombok.extern.slf4j.Slf4j;
 

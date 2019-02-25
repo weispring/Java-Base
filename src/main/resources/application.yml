@@ -1,0 +1,8 @@
+server:
+  port: 2104		#微服务端口号，请自己查看文档填写。 http://172.16.124.2/showdoc/web/#/4?page_id=8
+spring:
+  application:
+    name: vp-central-cmcc-service-terminal
+    
+vphonor:
+  env: ${vp_env:unit}                     #环境名 unit单元测试(刷库刷表)  dev开发集成  test测试  stage预演  prod生产

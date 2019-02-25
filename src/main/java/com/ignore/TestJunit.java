@@ -1,4 +1,4 @@
-package ignore;
+package com.ignore;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

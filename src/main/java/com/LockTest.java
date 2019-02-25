@@ -1,6 +1,5 @@
-package lock;
+package com.lock;
 
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -156,5 +155,72 @@ public class LockTest {
         Thread.currentThread().sleep(33000);
         log.info("主线程sleep end ");
     }
+
+    @Test
+    public void test1() {
+        Long a = 1L;
+        new Thread(()->{
+            synchronized (a){
+                log.info("抢占资源开始");
+                try {
+                    Thread.sleep(1000*10);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                log.info("抢占资源结束");
+            }
+        }).start();
+
+
+        Thread thread = new Thread(()->{
+            log.info("线程1 开始执行");
+            synchronized (a){
+                log.info("线程1 获取到锁");
+            }
+            log.info("线程1 执行完毕");
+        });
+        thread.start();
+        log.info("thread 1 : {}",thread.getState());
+        try {
+            Thread.currentThread().sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        thread.interrupt();
+        log.info("thread 2 : {}",thread.getState());
+        try {
+            log.info("主线程开始休眠");
+            Thread.currentThread().sleep(1000 * 20);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        log.info("主线程执行完毕");
+
+    }
+
+
+    @Test
+    public void test2() {
+        Long a = 1L;
+        new Thread(()->{
+            Thread.currentThread().interrupt();
+            synchronized (a){
+                log.info("抢占资源开始");
+                try {
+                    Thread.sleep(1000*10);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                log.info("抢占资源结束");
+            }
+        }).start();
+    }
+
+
+    @Test
+    public void test33() {
+        log.info("抢占资源开始=========");
+    }
+
 
 }
