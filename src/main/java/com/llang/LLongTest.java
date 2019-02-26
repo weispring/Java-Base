@@ -3,6 +3,9 @@ package com.llang;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @Auther: lixianchun
  * @Date: 2018/11/24 18:12
@@ -86,23 +89,6 @@ public class LLongTest {
 
 
 
-    /**
-     * String 固定数组，操作产生新的对象
-     *
-     * 可扩容数据,初始容量为16初始容量为16，扩容后2n+2
-     * StringBuffer 线程安全,toString会缓存char[] 数组
-     * StringBuilder 线程不安全
-     * 两者相似
-     */
-    @Test
-    public void testString(){
-    /*public StringBuilder(String str) {
-            super(str.length() + 16);
-            append(str);
-        }*/
-        StringBuffer a = new StringBuffer();
-        StringBuilder b = new StringBuilder();
-    }
 
 
     /**
@@ -119,5 +105,47 @@ public class LLongTest {
         Integer.toOctalString(1);
         Integer.toBinaryString(1);
 
+    }
+
+
+    /**
+     * String 固定数组，操作产生新的对象
+     *
+     * 可扩容数据,初始容量为16初始容量为16，扩容后2n+2
+     * StringBuffer 线程安全,toString会缓存char[] 数组
+     * StringBuilder 线程不安全
+     * 两者相似
+     */
+    @Test
+    public void testString(){
+        String a = "";
+        String bb = a.replace("","");
+
+       /* replaceFirst
+        toLowerCase
+        format*/
+
+        //bb.hashCode()
+
+    /*public StringBuilder(String str) {
+            super(str.length() + 16);
+            append(str);
+        }*/
+        StringBuffer aa = new StringBuffer();
+        StringBuilder b = new StringBuilder();
+
+
+
+    }
+
+
+    @Test
+    public void testQu(){
+        String format = "i am %s , come from %s ";
+        List<String> messages = new ArrayList<>(5);
+        messages.add("lichun");
+        messages.add("china");
+        String result = String.format(format,messages.toArray());
+        log.info("result :{}",result);
     }
 }
