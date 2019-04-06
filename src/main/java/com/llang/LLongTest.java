@@ -5,6 +5,8 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * @Auther: lixianchun
@@ -57,7 +59,8 @@ public class LLongTest {
         new Integer(10);
         new Long(10).hashCode();
 
-
+        //AtomicInteger cas
+        //AtomicLong 可并行，多个cell
     }
 
     /**
