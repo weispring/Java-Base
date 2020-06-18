@@ -1,0 +1,46 @@
+note:
+8中基本数据类型包装类的hashCode都重写了，与其他本身值有关
+
+AbstractStringBuilder
+主要操作char[]数据， 经常用到System.arraycopy
+reverse
+highCode
+
+
+learn:
+java.lang.Integer.toBinaryString
+
+Number
+1. 数字与字符串的转换，（取商取余，乘以进制加低位）
+2. 原码、反码、补码
+3. 整形缓存[-128,127+]
+4. hashCode、equals
+p
+Float
+
+
+String
+1. char[] 数组的操作
+p
+/* replaceFirst
+ toLowerCase
+ format*/
+
+Object
+下面是hashcode约定的内容，来自java.lang.Object的规范:
+1. 在一个应用程序执行期间，如果一个对象的equals方法比较所用到的信息没有被修改的话，那么，对该对象调用hashCode方法多次，它必须始终如一地返回一个整数。在同一个应用程序的多次执行过程中，这个整数可以不同，即这个应用程序这次执行返回的整数与下一次执行返回的整数可以不一致。
+2. 如果两个对象根据equals(Object)方法是相等的，那么调用这两个对象中任意一个对象的hashCode方法必须产生同样的整数结果。
+3. 如果两个对象根据equals(Object)方法是不相等的，那么调用这两个对象中任意一个对象的hashCode方法，不要求必须产生不同的整数结果。然而，程序员应该意识到这样的事实，对于不相等的对象产生截然不同的整数结果，有可能提高散列表的性能。
+wait 方法
+针对两个线程同时等待还是要加这个while的，再次判断是否可以唤醒当前线程
+
+ThreadLocal
+
+p
+哈希冲突
+内存泄漏
+
+wait
+date
+bigDecimal
+regex

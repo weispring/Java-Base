@@ -1,3 +1,5 @@
+package com.llang;
+
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
@@ -11,23 +13,23 @@ import java.util.Map;
 @Slf4j
 public class StringSimpleTest {
 
+    /**
+     *
+     */
 
     @Test
     public void testSystem(){
 
         Map<String,String> map = System.getenv();
 
-
+        String a = "123";
+        a.indexOf("12");
+        a.equals("");
 
 
         log.info("-----");
     }
 
-
-    /**
-     * Arrays
-     *
-     */
 
 
 

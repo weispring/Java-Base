@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<include
+		resource="org/springframework/boot/logging/logback/defaults.xml" />
+	​
+	<springProperty scope="context" name="springAppName"
+		source="spring.application.name"  />
+	<springProperty scope="context" name="vpLogsPath"
+		source="vphonor.log.logstash" />
+	<springProperty scope="context" name="envtype"
+		source="vphonor.env" />
+	<!-- Example for logging into the build folder of your project -->
+	<property name="LOG_FILE"
+		value="${vp_logs_path:-target}/${springAppName}/vp.log" />
+	<!-- 加入行号和跳转功能 -->
+	<property name="CONSOLE_LOG_PATTERN_DEBUG"
+		value="%d{yyyy/MM/dd-HH:mm:ss.SSS} %level [%thread] %caller{1} - %msg%n" />
+	​
+
+	<!-- <conversionRule conversionWord="clr"
+		converterClass="org.springframework.boot.logging.logback.ColorConverter" /> -->
+
+	<!-- <property name="CONSOLE_LOG_PATTERN"
+		value="%boldRed([${envtype:-}]){faint}%boldMagenta([%d{yyyy-MM-dd HH:mm:ss.SSS}]){faint}%boldCyan([${springAppName:-}]){faint}%boldBlue(${LOG_LEVEL_PATTERN:-%1p}){faint}%boldCyan([${PID:- }]){faint}%boldGreen([%15.15t]){faint}%boldBlue([%-40.40logger{39}]){faint}%boldRed([%-3.3L]) %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}" /> -->
+	<property name="CONSOLE_LOG_PATTERN"
+		value="[${envtype:-}][%d{yyyy-MM-dd HH:mm:ss.SSS}][${springAppName:-}]${LOG_LEVEL_PATTERN:-%1p}[${PID:- }][%15.15t][%-40.40logger{39}][%-3.3L]%m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}" />
+	<property name="LOGSTASH_LOG_PATTERN"
+		value="[${envtype:-}][%d{yyyy-MM-dd HH:mm:ss.SSS}][${springAppName:-}]${LOG_LEVEL_PATTERN:-%1p}[${PID:- }][%15.15t][%-40.40logger{39}][%-3.3L]%m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}" />
+	<!-- Appender to log to console -->
+	<appender name="console"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<!-- Minimum logging level to be presented in the console logs -->
+			<level>DEBUG</level>
+		</filter>
+		<encoder>
+			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
+			<charset>utf8</charset>
+		</encoder>
+	</appender>
+
+	<!-- Appender to log to file -->
+	​
+	<appender name="flatfile"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_FILE}</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_FILE}.%d{yyyy-MM-dd}%i.gz</fileNamePattern>
+			<!-- 每个日志文件最大10MB, 保留30天的日志文件, 但是最多总文件大小为 5GB -->
+			<maxFileSize>100MB</maxFileSize>
+			<maxHistory>30</maxHistory>
+			<totalSizeCap>2GB</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
+			<charset>utf8</charset>
+		</encoder>
+	</appender>
+	​
+	<!--Appender to log to file in a JSON format -->
+<!-- 	<appender name="logstash"
+		class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+		<destination>${vpLogsPath:-172.16.124.11:4560}</destination>
+		<encoder>
+			<pattern>${LOGSTASH_LOG_PATTERN}</pattern>
+			<charset>utf8</charset>
+		</encoder>
+	</appender> -->​
+	<root level="INFO">
+		<appender-ref ref="console" />
+		<!-- <appender-ref ref="logstash" /> -->
+		<appender-ref ref="flatfile" />
+	</root>
+</configuration>

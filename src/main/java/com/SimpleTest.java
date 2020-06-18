@@ -1,5 +1,10 @@
+package com;
+
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Auther: lixianchun
@@ -7,12 +12,8 @@ import org.junit.Test;
  * @Description:
  */
 @Slf4j
-public class LStringTest {
+public class SimpleTest {
 
 
-    @Test
-    public void test(){
 
-        System.out.println("-------");
-    }
 }
